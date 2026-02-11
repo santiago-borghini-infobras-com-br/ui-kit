@@ -1,0 +1,32 @@
+{
+  "name": "ui-kit",
+  "version": "0.1.0",
+  "description": "UI Kit de componentes Core basados en design tokens.",
+  "keywords": [
+    "ui-kit",
+    "design-tokens",
+    "react",
+    "component-library"
+  ],
+  "author": "",
+  "license": "ISC",
+  "main": "dist/ui-kit.cjs",
+  "module": "dist/ui-kit.es.js",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0",
+    "design-tokens": ">=1.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^6.4.1"
+  }
+}

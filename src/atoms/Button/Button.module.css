@@ -1,0 +1,59 @@
+.button {
+  border-radius: var(--button-radius);
+  background: var(--button-primary-background);
+  color: var(--button-primary-text);
+  padding: var(--button-padding-md);
+  border-width: var(--button-border-width);
+  border-style: solid;
+  border-color: var(--button-primary-border);
+  font-family: var(--font-family-base);
+  font-size: var(--button-font-size);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-gap);
+}
+
+.primary {
+  background: var(--button-primary-background);
+  color: var(--button-primary-text);
+  border-color: var(--button-primary-border);
+}
+
+.primaryHover {
+  background: var(--button-primary-background-hover);
+}
+
+.danger {
+  background: var(--button-danger-background);
+  color: var(--button-danger-text);
+  border-color: var(--button-danger-border);
+}
+
+.dangerHover {
+  background: var(--button-danger-background-hover);
+}
+
+.sm {
+  padding: var(--button-padding-sm);
+  font-size: var(--button-font-size-sm);
+}
+
+.md {
+  padding: var(--button-padding-md);
+  font-size: var(--button-font-size-md);
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.disabled {
+  background: var(--button-disabled-background);
+  color: var(--button-disabled-text);
+  border-color: var(--button-disabled-border);
+  cursor: not-allowed;
+  opacity: var(--button-disabled-opacity);
+}
+

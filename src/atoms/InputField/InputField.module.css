@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--inputfield-gap);
+  font-family: var(--font-family-base);
+}
+
+.label {
+  font-size: var(--inputfield-label-font-size);
+  color: var(--inputfield-label-color);
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  border-radius: var(--inputfield-radius);
+  border-width: var(--inputfield-border-width);
+  border-style: solid;
+  border-color: var(--inputfield-border-color);
+  background: var(--inputfield-background);
+  color: var(--inputfield-text-color);
+  padding: var(--inputfield-padding-md);
+  font-size: var(--inputfield-font-size-md);
+}
+
+.sm {
+  padding: var(--inputfield-padding-sm);
+  font-size: var(--inputfield-font-size-sm);
+}
+
+.md {
+  padding: var(--inputfield-padding-md);
+  font-size: var(--inputfield-font-size-md);
+}
+
+.default {
+  border-color: var(--inputfield-border-color);
+}
+
+.error {
+  border-color: var(--inputfield-error-border-color);
+  background: var(--inputfield-error-background);
+}
+
+.helperText {
+  font-size: var(--inputfield-helper-font-size);
+  color: var(--inputfield-helper-color);
+}
+
+.helperTextError {
+  color: var(--inputfield-helper-error-color);
+}
+
+.disabled {
+  background: var(--inputfield-disabled-background);
+  color: var(--inputfield-disabled-text-color);
+  border-color: var(--inputfield-disabled-border-color);
+  cursor: not-allowed;
+  opacity: var(--inputfield-disabled-opacity);
+}
+
