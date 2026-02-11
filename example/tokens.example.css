@@ -1,0 +1,69 @@
+/* 
+ * tokens.example.css
+ *
+ * Archivo de tokens SOLO para pruebas locales.
+ * 
+ * Uso:
+ * 1. Copia este archivo como `tokens.css` en esta misma carpeta:
+ *    cp example/tokens.example.css example/tokens.css
+ * 2. Modifica los valores para simular distintos temas/tokens.
+ *
+ * Nota: `example/tokens.css` está en .gitignore y no se commitea.
+ */
+
+:root {
+  /* Button tokens de ejemplo */
+  --button-radius: 4px;
+  --button-primary-background: #2563eb;
+  --button-primary-background-hover: #1d4ed8;
+  --button-primary-text: #ffffff;
+  --button-primary-border: #1d4ed8;
+
+  --button-danger-background: #dc2626;
+  --button-danger-background-hover: #b91c1c;
+  --button-danger-text: #ffffff;
+  --button-danger-border: #b91c1c;
+
+  --button-disabled-background: #e5e7eb;
+  --button-disabled-text: #9ca3af;
+  --button-disabled-border: #d1d5db;
+  --button-disabled-opacity: 0.7;
+
+  --button-padding-sm: 6px 10px;
+  --button-padding-md: 8px 16px;
+  --button-font-size-sm: 12px;
+  --button-font-size-md: 14px;
+  --button-font-size: 14px;
+  --button-border-width: 1px;
+  --button-gap: 8px;
+
+  /* InputField tokens de ejemplo */
+  --inputfield-gap: 4px;
+  --inputfield-radius: 4px;
+  --inputfield-border-width: 1px;
+  --inputfield-border-color: #d1d5db;
+  --inputfield-background: #ffffff;
+  --inputfield-text-color: #111827;
+
+  --inputfield-padding-sm: 4px 8px;
+  --inputfield-padding-md: 6px 10px;
+  --inputfield-font-size-sm: 12px;
+  --inputfield-font-size-md: 14px;
+
+  --inputfield-error-border-color: #dc2626;
+  --inputfield-error-background: #fef2f2;
+
+  --inputfield-helper-font-size: 12px;
+  --inputfield-helper-color: #6b7280;
+  --inputfield-helper-error-color: #b91c1c;
+
+  --inputfield-disabled-background: #f3f4f6;
+  --inputfield-disabled-text-color: #9ca3af;
+  --inputfield-disabled-border-color: #e5e7eb;
+  --inputfield-disabled-opacity: 0.7;
+
+  /* Tipografía base de ejemplo */
+  --font-family-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+}
+
