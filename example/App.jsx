@@ -17,19 +17,20 @@ import {
  */
 export const App = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        padding: '1.5rem'
-      }}
-    >
-      <h1>UI Kit - Ejemplo de uso</h1>
+    <>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1rem',
+          padding: '1.5rem'
+        }}
+      >
+        <h1>UI Kit - Ejemplo de uso</h1>
 
-      <section>
-        <h2>Buttons</h2>
-        <div style={{ display: 'flex', gap: '1rem' }}>
+        <section>
+          <h2>Buttons</h2>
+          <div style={{ display: 'flex', gap: '1rem' }}>
           <Button
             variant={BUTTON_VARIANTS.PRIMARY}
             size={BUTTON_SIZES.SM}
@@ -55,12 +56,12 @@ export const App = () => {
           >
             Disabled
           </Button>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      <section>
-        <h2>InputField</h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: 400 }}>
+        <section>
+          <h2>InputField</h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: 400 }}>
           <InputField
             id="name"
             label="Nombre"
@@ -88,9 +89,10 @@ export const App = () => {
             state={INPUTFIELD_STATES.DISABLED}
             helperText="Campo deshabilitado."
           />
-        </div>
-      </section>
-    </div>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 

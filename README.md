@@ -16,18 +16,20 @@ Todos los estilos se basan en **design tokens** (paquete `design-tokens`) y se p
 ## Estructura del proyecto
 
 - `src/atoms/`
-  - Componentes atómicos básicos (por ejemplo: `Button`, `InputField`).
+  - Componentes atómicos básicos: `Button`, `InputField`, `IconButton`, `Avatar`.
 - `src/molecules/`
-  - Componentes que combinan varios átomos (por crear en el futuro).
+  - Componentes más complejos: `Overlay`, `Drawer`.
 - Cada componente se organiza en una carpeta con esta estructura:
 
-  ```text
-  /Componente
-    Componente.jsx          # Lógica y JSX del componente
-    Componente.module.css   # Estilos usando CSS Modules + design tokens
-    Componente.constants.js # Variantes, tamaños y estados posibles
-    index.js                # Re-exporta componente y constantes
-  ```
+```text
+/Componente
+  Componente.jsx          # Lógica y JSX del componente
+  Componente.module.css   # Estilos usando CSS Modules + design tokens
+  Componente.constants.js # Variantes, tamaños y estados posibles
+  index.js                # Re-exporta componente y constantes
+```
+
+### Punto de entrada
 
 - `src/index.js`
   - Punto de entrada del package: exporta todos los componentes y sus constantes públicas.
