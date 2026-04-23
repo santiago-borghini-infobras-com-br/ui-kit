@@ -22,7 +22,4 @@ pnpm-debug.log*
 .env
 .env.*
 
-# Tokens locales de ejemplo (solo uso interno)
-example/tokens.css
-
 

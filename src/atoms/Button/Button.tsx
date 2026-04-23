@@ -24,6 +24,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: ButtonSize;
   fullWidth?: boolean;
   disabled?: boolean;
+  loading?: boolean;
   children?: ReactNode;
 }
 
@@ -38,6 +39,7 @@ export const Button = ({
   size = BUTTON_SIZES.MD,
   fullWidth = false,
   disabled = false,
+  loading = false,
   children,
   ...rest
 }: ButtonProps) => {
@@ -49,14 +51,14 @@ export const Button = ({
     variantClassName,
     sizeClassName,
     fullWidth ? styles.fullWidth : null,
-    disabled ? styles.disabled : null
+    loading ? styles.loading : null
   ]
     .filter(Boolean)
     .join(' ');
 
   return (
     <button type="button" className={className} disabled={disabled} {...rest}>
-      {children}
+      {loading ? 'Loading...' : children}
     </button>
   );
 };

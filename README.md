@@ -124,19 +124,19 @@ En la raíz del proyecto:
   - CommonJS: `dist/ui-kit.cjs`
   - ES Module: `dist/ui-kit.es.js`
 
-- **Dev / ejemplo local**
+- **Storybook local**
 
-  Puedes usar Vite para desarrollar y probar el UI Kit junto al ejemplo:
+  Usa Storybook para desarrollar y documentar componentes:
 
   ```bash
-  npm run dev
+  npm run storybook
   ```
 
 ---
 
 ## Ejemplo de uso
 
-Consulta `example/App.jsx` para ver cómo se importan y utilizan los componentes desde el propio package.
+Consulta los stories co-ubicados en `src/**/*.stories.tsx` para ver cómo se importan y utilizan los componentes del package.
 
 Ejemplo simplificado:
 

@@ -1,59 +1,46 @@
 .button {
-  border-radius: var(--button-radius);
-  background: var(--button-primary-background);
-  color: var(--button-primary-text);
-  padding: var(--button-padding-md);
-  border-width: var(--button-border-width);
+  border-radius: var(--button-radius, 4px);
+  border-width: var(--button-border-width, 1px);
   border-style: solid;
-  border-color: var(--button-primary-border);
-  font-family: var(--font-family-base);
-  font-size: var(--button-font-size);
+  font-family: var(--typography-font-family-ref-font-family-primary, "Source Sans Pro");
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--button-gap);
 }
 
 .primary {
-  background: var(--button-primary-background);
-  color: var(--button-primary-text);
-  border-color: var(--button-primary-border);
+  background: var(--color-content-link-sem-color-content-link-default, #238EDE);
+  color: var(--color-action-primary-fg-sem-color-primary-action-fg-default, #FFF);
+  border-color: var(--color-content-link-sem-color-content-link-default, #238EDE);
 }
 
-.primaryHover {
-  background: var(--button-primary-background-hover);
+.primary:hover {
+  background: var(--color-action-primary-bg-sem-color-primary-action-bg-pressed, #0E3959);
+  color: var(--color-action-primary-fg-sem-color-primary-action-fg-default, #FFF);
+  border-color: var(--color-action-primary-bg-sem-color-primary-action-bg-pressed, #0E3959);
 }
 
-.danger {
-  background: var(--button-danger-background);
-  color: var(--button-danger-text);
-  border-color: var(--button-danger-border);
+.primary:focus {
+  background: var(--color-action-primary-bg-sem-color-primary-action-bg-pressed, #0E3959);
+  color: var(--color-action-primary-fg-sem-color-primary-action-fg-default, #FFF);
+  border-color: var(--color-action-primary-bg-sem-color-primary-action-bg-pressed, #0E3959);
 }
 
-.dangerHover {
-  background: var(--button-danger-background-hover);
-}
+.button[disabled] {
+  background: var(--color-surface-sem-color-surface-disabled, #D9DDE2);
+  color: var(--color-content-sem-color-content-disabled, #A1AAB6);
+  border-color: var(--color-surface-sem-color-surface-disabled, #D9DDE2);
 
-.sm {
-  padding: var(--button-padding-sm);
-  font-size: var(--button-font-size-sm);
 }
 
 .md {
-  padding: var(--button-padding-md);
-  font-size: var(--button-font-size-md);
+  padding: var(--sizing-spacing-sem-sizing-spacing-sm, 12px) var(--sizing-spacing-sem-sizing-spacing-lg, 24px);
+  gap: var(--sizing-gap-sem-control-gap-sm, 4px);
+  font-size: var(--typography-size-sem-typography-size-button-sm, 16px);
+  height: var(--sizing-height-sem-control-height-md, 40px);
 }
 
 .fullWidth {
   width: 100%;
 }
-
-.disabled {
-  background: var(--button-disabled-background);
-  color: var(--button-disabled-text);
-  border-color: var(--button-disabled-border);
-  cursor: not-allowed;
-  opacity: var(--button-disabled-opacity);
-}
-
