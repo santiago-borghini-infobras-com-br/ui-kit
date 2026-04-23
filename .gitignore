@@ -4,6 +4,7 @@ node_modules
 # Build de la librería
 dist
 coverage
+storybook-static
 
 # Logs
 npm-debug.log*
