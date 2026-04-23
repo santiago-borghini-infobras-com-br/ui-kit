@@ -1,14 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 import styles from './Avatar.module.css';
-import { AVATAR_SIZES } from './Avatar.constants';
+
+export const AVATAR_SIZES = {
+  SM: 'sm',
+  MD: 'md'
+} as const;
+
+export type AvatarSize = (typeof AVATAR_SIZES)[keyof typeof AVATAR_SIZES];
+
+export interface AvatarProps {
+  src?: string;
+  alt?: string;
+  size?: AvatarSize;
+  children?: ReactNode;
+}
 
 /**
  * Avatar Core
  *
  * Muestra una imagen de usuario o iniciales.
  */
-export const Avatar = ({ src, alt, size = AVATAR_SIZES.MD, children }) => {
+export const Avatar = ({ src, alt, size = AVATAR_SIZES.MD, children }: AvatarProps) => {
   const className = [styles.avatar, styles[size]].filter(Boolean).join(' ');
 
   if (src) {
@@ -21,11 +33,3 @@ export const Avatar = ({ src, alt, size = AVATAR_SIZES.MD, children }) => {
 
   return <span className={className}>{children}</span>;
 };
-
-Avatar.propTypes = {
-  src: PropTypes.string,
-  alt: PropTypes.string,
-  size: PropTypes.oneOf(Object.values(AVATAR_SIZES)),
-  children: PropTypes.node
-};
-

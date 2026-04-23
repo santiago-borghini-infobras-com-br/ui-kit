@@ -3,6 +3,7 @@ node_modules
 
 # Build de la librería
 dist
+coverage
 
 # Logs
 npm-debug.log*

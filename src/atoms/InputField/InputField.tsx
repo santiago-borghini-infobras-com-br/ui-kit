@@ -1,11 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import type { InputHTMLAttributes, ReactNode } from 'react';
 import styles from './InputField.module.css';
-import {
-  INPUTFIELD_VARIANTS,
-  INPUTFIELD_SIZES,
-  INPUTFIELD_STATES
-} from './InputField.constants';
+
+export const INPUTFIELD_VARIANTS = {
+  DEFAULT: 'default',
+  ERROR: 'error'
+} as const;
+
+export const INPUTFIELD_SIZES = {
+  SM: 'sm',
+  MD: 'md'
+} as const;
+
+export const INPUTFIELD_STATES = {
+  DEFAULT: 'default',
+  DISABLED: 'disabled'
+} as const;
+
+export type InputFieldVariant = (typeof INPUTFIELD_VARIANTS)[keyof typeof INPUTFIELD_VARIANTS];
+export type InputFieldSize = (typeof INPUTFIELD_SIZES)[keyof typeof INPUTFIELD_SIZES];
+export type InputFieldState = (typeof INPUTFIELD_STATES)[keyof typeof INPUTFIELD_STATES];
+
+export interface InputFieldProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
+  id?: string;
+  label?: ReactNode;
+  variant?: InputFieldVariant;
+  size?: InputFieldSize;
+  state?: InputFieldState;
+  helperText?: ReactNode;
+}
 
 /**
  * InputField Core
@@ -21,7 +43,7 @@ export const InputField = ({
   state = INPUTFIELD_STATES.DEFAULT,
   helperText,
   ...rest
-}) => {
+}: InputFieldProps) => {
   const inputClassNames = [
     styles.input,
     styles[variant],
@@ -49,31 +71,10 @@ export const InputField = ({
       )}
 
       <div className={styles.inputWrapper}>
-        <input
-          id={id}
-          className={inputClassNames}
-          disabled={isDisabled}
-          {...rest}
-        />
+        <input id={id} className={inputClassNames} disabled={isDisabled} {...rest} />
       </div>
 
       {helperText && <p className={helperClassNames}>{helperText}</p>}
     </div>
   );
 };
-
-InputField.propTypes = {
-  /** Identificador del input. También se usa para asociar la etiqueta. */
-  id: PropTypes.string,
-  /** Etiqueta visible encima del campo. */
-  label: PropTypes.node,
-  /** Variante visual del campo (`default`, `error`). Debe usar INPUTFIELD_VARIANTS. */
-  variant: PropTypes.oneOf(Object.values(INPUTFIELD_VARIANTS)),
-  /** Tamaño del campo (`sm`, `md`). Debe usar INPUTFIELD_SIZES. */
-  size: PropTypes.oneOf(Object.values(INPUTFIELD_SIZES)),
-  /** Estado del campo (`default`, `disabled`). Debe usar INPUTFIELD_STATES. */
-  state: PropTypes.oneOf(Object.values(INPUTFIELD_STATES)),
-  /** Texto auxiliar debajo del campo. */
-  helperText: PropTypes.node
-};
-

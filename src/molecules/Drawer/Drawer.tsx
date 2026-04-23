@@ -1,7 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
 import styles from './Drawer.module.css';
-import { DRAWER_SIDES } from './Drawer.constants';
+
+export const DRAWER_SIDES = {
+  LEFT: 'left',
+  RIGHT: 'right'
+} as const;
+
+export type DrawerSide = (typeof DRAWER_SIDES)[keyof typeof DRAWER_SIDES];
+
+export interface DrawerProps {
+  isOpen?: boolean;
+  side?: DrawerSide;
+  title?: ReactNode;
+  headerActions?: ReactNode;
+  children?: ReactNode;
+}
 
 /**
  * Drawer Core
@@ -14,7 +27,7 @@ export const Drawer = ({
   title,
   headerActions,
   children
-}) => {
+}: DrawerProps) => {
   if (!isOpen) return null;
 
   const className = [styles.drawer, styles[side]].filter(Boolean).join(' ');
@@ -31,12 +44,3 @@ export const Drawer = ({
     </aside>
   );
 };
-
-Drawer.propTypes = {
-  isOpen: PropTypes.bool,
-  side: PropTypes.oneOf(Object.values(DRAWER_SIDES)),
-  title: PropTypes.node,
-  headerActions: PropTypes.node,
-  children: PropTypes.node
-};
-
